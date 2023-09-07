@@ -1,0 +1,15 @@
+<div id="nav-bar">
+  <p>Barre en haut</p>
+</div>
+
+<form [formGroup]="quizForm" (ngSubmit)="test()">
+  <div *ngFor="let question of questions; let i = index">
+    <app-question
+      [number]="i"
+      [question]="question"
+      (scoreEmitter)="obtainResult(i,$event)"
+    ></app-question>
+  </div>
+  <button type="submit">Soumettre</button>
+</form>
+

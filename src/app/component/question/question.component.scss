@@ -1,0 +1,10 @@
+mat-selection-list {
+  display: flex;
+  flex-direction: row;
+
+  mat-list-option {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
