@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Question} from "../component/question/question.model";
+import {Question, Response} from "../component/question/question.model";
 import {HomeService} from "./home.service";
-import {FormArray, FormBuilder, FormGroup} from "@angular/forms";
+import {AbstractControl, FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {take} from "rxjs";
 
 @Component({
@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   public quizForm : FormGroup;
   public questionArray: FormArray;
+  public score: number = 0;
 
   constructor(
     private homeService: HomeService,
@@ -29,9 +30,9 @@ export class HomeComponent implements OnInit {
   initQuestions() {
     this.questions.forEach((question) => {
       const questionGroup = this.fb.group({
-        title: [question.title],
+        text: [question.text],
         response: [question.response],
-        selectedResponse: null
+        selectedResponse: [null, Validators.required]
       });
       this.questionArray.push(questionGroup);
     });
@@ -50,13 +51,43 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  obtainResult(index: number, score: number) {
-    console.log(index);
-    console.log(score)
+  getSelectedResponseControl(form : AbstractControl) {
+    return form.get('selectedResponse');
   }
 
-  test() {
-    console.log(this.quizForm)
+  getReponseControl(form : AbstractControl) {
+    return form.get('response');
+  }
+
+  submit() {
+    this.score = 0
+    this.questionArray.controls.forEach((questionGroup) => {
+      const selectedResponse = this.getSelectedResponseControl(questionGroup)?.value;
+      const responses = this.getReponseControl(questionGroup)?.value;
+      if (selectedResponse && responses) {
+        this.score += this.calculateScore(responses, selectedResponse);
+      }
+    });
+  }
+
+  calculateScore(response : Response[], selectedResponses: Response[]): number {
+    const numberOfCorrect = response.filter(response => response.isCorrect).length;
+
+    let score = 0;
+
+    selectedResponses.forEach(selectedResponse => {
+      if (selectedResponse.isCorrect) {
+        score++;
+      }
+      else {
+        score--;
+      }
+    });
+    if (score> 0) {
+      return score / numberOfCorrect
+    }
+
+    return 0;
   }
 
 }

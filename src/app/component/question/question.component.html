@@ -1,10 +1,10 @@
 <div id="card">
 
   <h2>Question : {{ number + 1 }}</h2>
-  <p>{{ question.title }}</p>
+  <p class="text-question">{{ question.text }}</p>
 
   <form [formGroup]="questionForm">
-    <mat-selection-list [multiple]="numberOfCorrect > 1" formControlName="choices">
+    <mat-selection-list [disableRipple]="true" [multiple]="numberOfCorrect > 1" formControlName="choices">
       <mat-list-option *ngFor="let response of question.response" [value]="response">
         {{response.choice}}
       </mat-list-option>

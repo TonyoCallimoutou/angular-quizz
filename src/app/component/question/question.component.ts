@@ -10,7 +10,7 @@ import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 export class QuestionComponent implements OnInit{
   @Input() number: number = 1;
   @Input() question: Question = {} as Question;
-  @Output() scoreEmitter = new EventEmitter<number>();
+  @Output() responseEmitter = new EventEmitter<Response[]>();
 
   public numberOfCorrect = 0;
 
@@ -28,26 +28,8 @@ export class QuestionComponent implements OnInit{
 
     this.questionForm.get('choices')?.valueChanges
       .subscribe((value: Response[]) => {
-
-        this.scoreEmitter.emit(this.calculateScore(value));
+        this.responseEmitter.emit(value);
       });
   }
 
-  calculateScore(selectedResponses: Response[]): number {
-    let score = 0;
-
-    selectedResponses.forEach(selectedResponse => {
-      if (selectedResponse.isCorrect) {
-        score++;
-      }
-      else {
-        score--;
-      }
-    });
-    if (score> 0) {
-      return score/this.numberOfCorrect
-    }
-
-    return 0;
-  }
 }

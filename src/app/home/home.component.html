@@ -1,15 +1,22 @@
-<div id="nav-bar">
-  <p>Barre en haut</p>
-</div>
+<mat-toolbar color="primary">
+  <span>QuizzLearn</span>
+</mat-toolbar>
 
-<form [formGroup]="quizForm" (ngSubmit)="test()">
-  <div *ngFor="let question of questions; let i = index">
+<form
+  id="questionnaire"
+  [formGroup]="quizForm">
+  <div
+    *ngFor="let question of questionArray.controls; let i = index">
     <app-question
       [number]="i"
-      [question]="question"
-      (scoreEmitter)="obtainResult(i,$event)"
+      [question]="question.value"
+      (responseEmitter)="getSelectedResponseControl(question)?.setValue($event)"
     ></app-question>
   </div>
-  <button type="submit">Soumettre</button>
+
+  <div id="footer">
+    <button mat-raised-button color="primary" (click)="submit()" [disabled]="!quizForm.valid">Soumettre</button>
+    <span *ngIf="score">{{score}} / {{questions.length}}</span>
+  </div>
 </form>
 

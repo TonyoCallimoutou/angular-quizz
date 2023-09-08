@@ -4,8 +4,9 @@ export interface Response {
 }
 
 export interface Question {
-    title: string,
-    type: string,
+    theme: string,
+    text: string,
     response : Response[],
+    selectedResponse?: Response[]
 
 }

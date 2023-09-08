@@ -1,220 +1,220 @@
 [
   {
-    "title": "Question 1",
-    "type": "radio",
+    "theme": "Mathématiques",
+    "text": "Quelle est la dérivée de f(x) = x² + 3x + 2 ?",
     "response": [
       {
-        "choice": "A",
+        "choice": "2x + 3",
         "isCorrect": true
       },
       {
-        "choice": "B",
+        "choice": "2x",
         "isCorrect": false
       },
       {
-      "choice": "C",
-      "isCorrect": false
+        "choice": "3x + 3",
+        "isCorrect": false
       },
       {
-        "choice": "D",
+        "choice": "x² + 3x",
         "isCorrect": false
       }
     ]
   },
   {
-    "title": "Question 2",
-    "type": "radio",
+    "theme": "Mathématiques",
+    "text": "Quelle est la racine carrée de 9 ?",
     "response": [
       {
-        "choice": "A",
+        "choice": "3",
         "isCorrect": true
       },
       {
-        "choice": "B",
+        "choice": "6",
         "isCorrect": false
       },
       {
-        "choice": "C",
-        "isCorrect": false
+        "choice": "-3",
+        "isCorrect": true
       },
       {
-        "choice": "D",
+        "choice": "0",
         "isCorrect": false
       }
     ]
   },
   {
-    "title": "Question 3",
-    "type": "radio",
+    "theme": "Mathématiques",
+    "text": "Quelle est la valeur de π (pi) ?",
     "response": [
       {
-        "choice": "A",
+        "choice": "3.14",
         "isCorrect": true
       },
       {
-        "choice": "B",
-        "isCorrect": false
+        "choice": "22/7",
+        "isCorrect": true
       },
       {
-        "choice": "C",
-        "isCorrect": false
+        "choice": "3.14159265359",
+        "isCorrect": true
       },
       {
-        "choice": "D",
+        "choice": "3",
         "isCorrect": false
       }
     ]
   },
   {
-    "title": "Question 4",
-    "type": "radio",
+    "theme": "Mathématiques",
+    "text": "Quelle est la solution de l'équation 2x - 5 = 7 ?",
     "response": [
       {
-        "choice": "A",
+        "choice": "3",
         "isCorrect": true
       },
       {
-        "choice": "B",
+        "choice": "6",
         "isCorrect": false
       },
       {
-        "choice": "C",
+        "choice": "-1",
         "isCorrect": false
       },
       {
-        "choice": "D",
+        "choice": "12",
         "isCorrect": false
       }
     ]
   },
   {
-    "title": "Question 5",
-    "type": "radio",
+    "theme": "Mathématiques",
+    "text": "Quel est le volume d'un cylindre de rayon r et de hauteur h ?",
     "response": [
       {
-        "choice": "A",
+        "choice": "πrh",
         "isCorrect": true
       },
       {
-        "choice": "B",
+        "choice": "2πrh",
         "isCorrect": false
       },
       {
-        "choice": "C",
+        "choice": "πr²",
         "isCorrect": false
       },
       {
-        "choice": "D",
+        "choice": "πr²h",
         "isCorrect": false
       }
     ]
   },
   {
-    "title": "Question 6",
-    "type": "radio",
+    "theme": "Mathématiques",
+    "text": "Quelle est la somme des angles intérieurs d'un triangle ?",
     "response": [
       {
-        "choice": "A",
+        "choice": "180 degrés",
         "isCorrect": true
       },
       {
-        "choice": "B",
+        "choice": "90 degrés",
         "isCorrect": false
       },
       {
-        "choice": "C",
+        "choice": "270 degrés",
         "isCorrect": false
       },
       {
-        "choice": "D",
+        "choice": "360 degrés",
         "isCorrect": false
       }
     ]
   },
   {
-    "title": "Question 7",
-    "type": "radio",
+    "theme": "Mathématiques",
+    "text": "Quelle est la dérivée de f(x) = sin(x) ?",
     "response": [
       {
-        "choice": "A",
+        "choice": "cos(x)",
         "isCorrect": true
       },
       {
-        "choice": "B",
+        "choice": "-sin(x)",
         "isCorrect": false
       },
       {
-        "choice": "C",
+        "choice": "e^x",
         "isCorrect": false
       },
       {
-        "choice": "D",
+        "choice": "1/x",
         "isCorrect": false
       }
     ]
   },
   {
-    "title": "Question 8",
-    "type": "radio",
+    "theme": "Mathématiques",
+    "text": "Quelle est la factorisation de l'expression x² - 4 ?",
     "response": [
       {
-        "choice": "A",
+        "choice": "(x + 2)(x - 2)",
         "isCorrect": true
       },
       {
-        "choice": "B",
+        "choice": "x + 2",
         "isCorrect": false
       },
       {
-        "choice": "C",
+        "choice": "(x + 4)(x - 4)",
         "isCorrect": false
       },
       {
-        "choice": "D",
+        "choice": "x² + 4",
         "isCorrect": false
       }
     ]
   },
   {
-    "title": "Question 9",
-    "type": "radio",
+    "theme": "Mathématiques",
+    "text": "Combien de côtés a un octogone ?",
     "response": [
       {
-        "choice": "A",
+        "choice": "8",
         "isCorrect": true
       },
       {
-        "choice": "B",
+        "choice": "6",
         "isCorrect": false
       },
       {
-        "choice": "C",
+        "choice": "7",
         "isCorrect": false
       },
       {
-        "choice": "D",
-        "isCorrect": true
+        "choice": "9",
+        "isCorrect": false
       }
     ]
   },
   {
-    "title": "Question 10",
-    "type": "radio",
+    "theme": "Mathématiques",
+    "text": "Quelle est la valeur de 2^5 ?",
     "response": [
       {
-        "choice": "A",
+        "choice": "16",
         "isCorrect": true
       },
       {
-        "choice": "B",
+        "choice": "32",
+        "isCorrect": true
+      },
+      {
+        "choice": "4",
         "isCorrect": false
       },
       {
-        "choice": "C",
-        "isCorrect": false
-      },
-      {
-        "choice": "D",
+        "choice": "64",
         "isCorrect": false
       }
     ]

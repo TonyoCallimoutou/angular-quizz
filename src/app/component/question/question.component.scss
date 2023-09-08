@@ -1,10 +1,25 @@
-mat-selection-list {
+#card {
+  box-shadow: 0 0 1rem 0 rgba(0,0,0,1);
+  padding: 2rem;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 1rem;
 
-  mat-list-option {
+  mat-selection-list {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 1rem;
+
+    mat-list-option {
+      display: flex;
+      flex-direction: column;
+      height: auto;
+      padding: 0;
+      box-shadow: 0 0 1px 0 rgba(0,0,0,1);
+
+    }
   }
+
 }
+
 
