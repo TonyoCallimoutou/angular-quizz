@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Question, Response} from "../component/question/question.model";
-import {HomeService} from "./home.service";
-import {AbstractControl, FormArray, FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {Questionnaire} from "../shared/model/question.model";
+import {HomeService} from "../shared/service/home.service";
 import {take} from "rxjs";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -10,32 +10,13 @@ import {take} from "rxjs";
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  public questions: Question[] = [];
 
-  public quizForm : FormGroup;
-  public questionArray: FormArray;
-  public score: number = 0;
+  questionnaires: Questionnaire[] = [];
 
   constructor(
     private homeService: HomeService,
-    private fb : FormBuilder
+    private router: Router,
     ) {
-    this.quizForm = this.fb.group({
-      questions: this.fb.array([])
-    });
-
-    this.questionArray = this.quizForm.get('questions') as FormArray;
-  }
-
-  initQuestions() {
-    this.questions.forEach((question) => {
-      const questionGroup = this.fb.group({
-        text: [question.text],
-        response: [question.response],
-        selectedResponse: [null, Validators.required]
-      });
-      this.questionArray.push(questionGroup);
-    });
   }
 
   ngOnInit(): void {
@@ -43,51 +24,15 @@ export class HomeComponent implements OnInit {
   }
 
   initQuestionnaire(): void {
-    this.homeService.getFakeData()
+    this.homeService.getQuestionnaire()
       .pipe(take(1))
-      .subscribe((data: any) => {
-      this.questions = data;
-      this.initQuestions();
-    });
+      .subscribe((data: Questionnaire[]) => {
+        this.questionnaires = data;
+      });
   }
 
-  getSelectedResponseControl(form : AbstractControl) {
-    return form.get('selectedResponse');
-  }
-
-  getReponseControl(form : AbstractControl) {
-    return form.get('response');
-  }
-
-  submit() {
-    this.score = 0
-    this.questionArray.controls.forEach((questionGroup) => {
-      const selectedResponse = this.getSelectedResponseControl(questionGroup)?.value;
-      const responses = this.getReponseControl(questionGroup)?.value;
-      if (selectedResponse && responses) {
-        this.score += this.calculateScore(responses, selectedResponse);
-      }
-    });
-  }
-
-  calculateScore(response : Response[], selectedResponses: Response[]): number {
-    const numberOfCorrect = response.filter(response => response.isCorrect).length;
-
-    let score = 0;
-
-    selectedResponses.forEach(selectedResponse => {
-      if (selectedResponse.isCorrect) {
-        score++;
-      }
-      else {
-        score--;
-      }
-    });
-    if (score> 0) {
-      return score / numberOfCorrect
-    }
-
-    return 0;
+  goToQuestionnaire(questionnaireId: number) {
+    this.router.navigate(['/quiz', questionnaireId]);
   }
 
 }

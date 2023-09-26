@@ -1,0 +1,17 @@
+<form
+  id="questionnaire"
+  [formGroup]="quizForm">
+  <div
+    *ngFor="let question of questionArray.controls; let i = index">
+    <app-question
+      [number]="i"
+      [question]="question.value"
+      [questionForm]="getFormGroupQuestion(question)"
+    ></app-question>
+  </div>
+
+  <div id="footer">
+    <button mat-raised-button color="primary" (click)="submit()" [disabled]="!quizForm.valid">Soumettre</button>
+    <span *ngIf="score">{{score}} / {{questions.length}}</span>
+  </div>
+</form>

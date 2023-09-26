@@ -1,10 +1,6 @@
-#questionnaire {
-  display: flex;
-  flex-direction: column;
-  gap: 5rem;
-  padding: 2rem;
-}
-
-#footer {
-  align-self: center;
+#page {
+  padding: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
 }

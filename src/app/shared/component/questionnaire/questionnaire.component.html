@@ -1,0 +1,7 @@
+<div class="card" *ngIf="questionnaire">
+  <h2> {{questionnaire.title}} </h2>
+  <button (click)="goToQuestionnaire.emit(questionnaire.questionnaireId)"> QUIZZ !!</button>
+</div>
+<div class="card" *ngIf="!questionnaire">
+  <button (click)="test()"> + </button>
+</div>

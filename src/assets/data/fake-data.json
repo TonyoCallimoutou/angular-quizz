@@ -1,5 +1,6 @@
 [
   {
+    "id": 0,
     "theme": "Mathématiques",
     "text": "Quelle est la dérivée de f(x) = x² + 3x + 2 ?",
     "response": [
@@ -22,6 +23,7 @@
     ]
   },
   {
+    "id": 1,
     "theme": "Mathématiques",
     "text": "Quelle est la racine carrée de 9 ?",
     "response": [
@@ -44,6 +46,7 @@
     ]
   },
   {
+    "id": 2,
     "theme": "Mathématiques",
     "text": "Quelle est la valeur de π (pi) ?",
     "response": [
@@ -66,6 +69,7 @@
     ]
   },
   {
+    "id": 3,
     "theme": "Mathématiques",
     "text": "Quelle est la solution de l'équation 2x - 5 = 7 ?",
     "response": [
@@ -88,6 +92,7 @@
     ]
   },
   {
+    "id": 4,
     "theme": "Mathématiques",
     "text": "Quel est le volume d'un cylindre de rayon r et de hauteur h ?",
     "response": [
@@ -110,6 +115,7 @@
     ]
   },
   {
+    "id": 5,
     "theme": "Mathématiques",
     "text": "Quelle est la somme des angles intérieurs d'un triangle ?",
     "response": [
@@ -132,6 +138,7 @@
     ]
   },
   {
+    "id": 6,
     "theme": "Mathématiques",
     "text": "Quelle est la dérivée de f(x) = sin(x) ?",
     "response": [
@@ -154,6 +161,7 @@
     ]
   },
   {
+    "id": 7,
     "theme": "Mathématiques",
     "text": "Quelle est la factorisation de l'expression x² - 4 ?",
     "response": [
@@ -176,6 +184,7 @@
     ]
   },
   {
+    "id": 8,
     "theme": "Mathématiques",
     "text": "Combien de côtés a un octogone ?",
     "response": [
@@ -198,6 +207,7 @@
     ]
   },
   {
+    "id": 9,
     "theme": "Mathématiques",
     "text": "Quelle est la valeur de 2^5 ?",
     "response": [

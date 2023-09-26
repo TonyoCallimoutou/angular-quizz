@@ -1,4 +1,10 @@
 <section>
-  <app-home></app-home>
+  <mat-toolbar color="primary">
+    <span>QuizzLearn</span>
+    <span class="spacer"></span>
+    <span *ngIf="currentUser"> {{currentUser.username}}</span>
+
+  </mat-toolbar>
+
   <router-outlet></router-outlet>
 </section>
