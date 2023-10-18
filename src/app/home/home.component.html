@@ -1,11 +1,20 @@
+<div style="display: grid; justify-content: center; margin-top: 5%;">
+    <mat-form-field class="example-form-field">
+      <mat-label>Search</mat-label>
+      <input matInput  [(ngModel)]="searchFilter" (input)="onChange()">
+      <button *ngIf="searchFilter" matSuffix mat-icon-button aria-label="Clear" (click)="searchFilter=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+</div>
 <div id="page">
-  <div *ngFor="let questionnaire of questionnaires">
-    <app-questionnaire
+  <div *ngFor="let questionnaire of displayedQuestions">
+    <app-questionnaire 
       [questionnaire]="questionnaire"
       (goToQuestionnaire)="goToQuestionnaire(questionnaire.questionnaireId)"
     ></app-questionnaire>
   </div>
-  <app-questionnaire
+  <app-questionnaire style="display: flex;"
   ></app-questionnaire>
 </div>
 

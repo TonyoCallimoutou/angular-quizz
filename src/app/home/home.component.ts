@@ -12,6 +12,8 @@ import {Router} from "@angular/router";
 export class HomeComponent implements OnInit {
 
   questionnaires: Questionnaire[] = [];
+  displayedQuestions: Questionnaire[] = [];
+  searchFilter: string = "";
 
   constructor(
     private homeService: HomeService,
@@ -23,11 +25,18 @@ export class HomeComponent implements OnInit {
     this.initQuestionnaire();
   }
 
+  onChange(): void {
+    this.displayedQuestions = this.questionnaires.filter((question: Questionnaire) => {
+      return question.title.includes(this.searchFilter);
+    })
+  }
+
   initQuestionnaire(): void {
     this.homeService.getQuestionnaire()
       .pipe(take(1))
       .subscribe((data: Questionnaire[]) => {
         this.questionnaires = data;
+        this.displayedQuestions = data;
       });
   }
 

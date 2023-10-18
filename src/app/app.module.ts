@@ -15,6 +15,7 @@ import { LoginComponent } from './home/login/login.component';
 import {MatInputModule} from "@angular/material/input";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatIconModule} from "@angular/material/icon";
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {MatIconModule} from "@angular/material/icon";
     QuestionModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormsModule,
     MatButtonModule,
     MatToolbarModule,
     MatInputModule,
