@@ -1,5 +1,7 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Questionnaire} from "../../model/question.model";
+import { HomeService } from '../../service/home.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-questionnaire',
@@ -9,13 +11,22 @@ import {Questionnaire} from "../../model/question.model";
 export class QuestionnaireComponent {
 
   @Input() questionnaire!: Questionnaire;
+  @Input() questions!: Questionnaire[];
   @Output() goToQuestionnaire : EventEmitter<number> = new EventEmitter<number>();
 
-  constructor() {
+  categoryName: string = "";
 
-  }
+  constructor(private homeService: HomeService,private router: Router) {}
+
   createQuestionnaire() {
-    console.log('ajouter un formulaire pour creer un questionnaire');
+    const questionnaire : Questionnaire = {
+      "title": this.categoryName,
+      "questionnaireId": this.homeService.lastIdQuestionnaire
+    }      
+    
+    this.homeService.createQuestionnaire(questionnaire).subscribe(() => {
+      this.questions = [...this.questions,questionnaire];
+    });
   }
 
 }

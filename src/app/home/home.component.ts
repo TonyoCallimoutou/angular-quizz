@@ -37,6 +37,7 @@ export class HomeComponent implements OnInit {
       .subscribe((data: Questionnaire[]) => {
         this.questionnaires = data;
         this.displayedQuestions = data;
+        this.homeService.lastIdQuestionnaire = this.questionnaires[this.questionnaires.length-1].questionnaireId;
       });
   }
 

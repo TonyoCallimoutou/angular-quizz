@@ -11,10 +11,11 @@
   <div *ngFor="let questionnaire of displayedQuestions">
     <app-questionnaire 
       [questionnaire]="questionnaire"
+      [questions]="displayedQuestions"
       (goToQuestionnaire)="goToQuestionnaire(questionnaire.questionnaireId)"
     ></app-questionnaire>
   </div>
-  <app-questionnaire style="display: flex;"
+  <app-questionnaire style="display: flex;" [questions]="displayedQuestions"
   ></app-questionnaire>
 </div>
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Response} from "../model/question.model";
+import {Questionnaire, Response} from "../model/question.model";
 import {FormArray} from "@angular/forms";
 
 @Injectable({
@@ -10,6 +10,8 @@ import {FormArray} from "@angular/forms";
 export class HomeService {
 
   private baseUrl = 'http://localhost:3000/';
+
+  lastIdQuestionnaire: number = 0;
 
   constructor(private http: HttpClient) {}
 
@@ -23,6 +25,10 @@ export class HomeService {
 
   getQuestionnaire(): Observable<any> {
     return this.http.get(this.baseUrl + 'questionnaire');
+  }
+
+  createQuestionnaire(questionnaire: Questionnaire): Observable<any> {
+    return this.http.post(this.baseUrl + 'questionnaire',questionnaire)
   }
 
   getScoreResult(questionArray : FormArray, correctResponse : Response[]): number {
