@@ -1,4 +1,4 @@
-<div id="card">
+<div id="card" [ngStyle]="{'color': quizFormControl.hasError('wrongAnswer') ? 'red' : null }">
 
   <h2>Question : {{ number + 1 }}</h2>
   <p class="text-question">{{ question.text }}</p>
@@ -10,8 +10,8 @@
       </mat-list-option>
     </mat-selection-list>
 
-<!--    <mat-error *ngIf="quizFormControl.hasError('wrongAnswer')">
-      Wrong Answer
-    </mat-error>-->
+    <mat-error *ngIf="quizFormControl.hasError('wrongAnswer')">
+      <strong>Wrong Answer</strong>
+    </mat-error>
   </form>
 </div>
