@@ -3,11 +3,15 @@
   <h2>Question : {{ number + 1 }}</h2>
   <p class="text-question">{{ question.text }}</p>
 
-  <form [formGroup]="questionForm">
-    <mat-selection-list [disableRipple]="true" [multiple]="question.isMultipleResponse" formControlName="userChoices">
+  <form>
+    <mat-selection-list [disableRipple]="true" [multiple]="question.isMultipleResponse" [formControl]="quizFormControl">
       <mat-list-option *ngFor="let response of question.response" [value]="response">
         {{response.choice}}
       </mat-list-option>
     </mat-selection-list>
+
+<!--    <mat-error *ngIf="quizFormControl.hasError('wrongAnswer')">
+      Wrong Answer
+    </mat-error>-->
   </form>
 </div>

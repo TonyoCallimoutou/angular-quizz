@@ -14,7 +14,7 @@ export class QuestionnaireComponent {
   constructor() {
 
   }
-  test() {
+  createQuestionnaire() {
     console.log('ajouter un formulaire pour creer un questionnaire');
   }
 

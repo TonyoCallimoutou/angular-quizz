@@ -5,8 +5,8 @@
     *ngFor="let question of questionArray.controls; let i = index">
     <app-question
       [number]="i"
-      [question]="question.value"
-      [questionForm]="getFormGroupQuestion(question)"
+      [question]="questions[i]"
+      [quizFormControl]="getFormControlQuestion(question)"
     ></app-question>
   </div>
 

@@ -39,13 +39,7 @@ export class QuizComponent implements OnInit {
 
   initQuestions() {
     this.questions.forEach((question) => {
-      const questionGroup = this.fb.group({
-        text: [question.text],
-        response: [question.response],
-        userChoices: new FormControl([], Validators.required),
-        isMultipleResponse: [question.isMultipleResponse]
-      });
-      this.questionArray.push(questionGroup);
+      this.questionArray.push(new FormControl([], Validators.required));
     });
   }
 
@@ -61,12 +55,14 @@ export class QuizComponent implements OnInit {
   updateValidatorForm(responses: Response[]) {
     this.questionArray.controls.forEach((question, index) => {
       // Update Validator with response
-      //question.get('userChoices')?.setValidators([]);
+      // console.log(question)
+      // console.log(responses[index])
+      // question.setErrors({...question.errors, wrongAnswer: 'Wrong Answer' });
     });
   }
 
-  getFormGroupQuestion(form : AbstractControl) {
-    return form as FormGroup;
+  getFormControlQuestion(form : AbstractControl) {
+    return form as FormControl;
   }
 
   submit() {

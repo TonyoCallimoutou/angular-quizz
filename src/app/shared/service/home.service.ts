@@ -27,8 +27,8 @@ export class HomeService {
 
   getScoreResult(questionArray : FormArray, correctResponse : Response[]): number {
     let score = 0;
-    questionArray.controls.forEach((questionGroup) => {
-      const selectedResponse : Response[] = questionGroup.value.userChoices;
+    questionArray.controls.forEach((questionControl) => {
+      const selectedResponse : Response[] = questionControl.value;
       const responses =  correctResponse.find(response => response.questionId === selectedResponse[0].questionId);
       if (selectedResponse && responses?.correctResponse) {
         score += this.calculateScore(responses.correctResponse, selectedResponse);
