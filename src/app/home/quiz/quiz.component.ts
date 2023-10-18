@@ -52,15 +52,6 @@ export class QuizComponent implements OnInit {
       });
   }
 
-  updateValidatorForm(responses: Response[]) {
-    this.questionArray.controls.forEach((question, index) => {
-      // Update Validator with response
-      // console.log(question)
-      // console.log(responses[index])
-      // question.setErrors({...question.errors, wrongAnswer: 'Wrong Answer' });
-    });
-  }
-
   getFormControlQuestion(form : AbstractControl) {
     return form as FormControl;
   }
@@ -70,7 +61,6 @@ export class QuizComponent implements OnInit {
       .pipe(take(1))
       .subscribe((data: Response[]) => {
         this.score = this.homeService.getScoreResult(this.questionArray, data);
-        this.updateValidatorForm(data);
       });
   }
 }

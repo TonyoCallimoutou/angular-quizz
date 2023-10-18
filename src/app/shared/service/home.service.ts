@@ -37,7 +37,11 @@ export class HomeService {
       const selectedResponse : Response[] = questionControl.value;
       const responses =  correctResponse.find(response => response.questionId === selectedResponse[0].questionId);
       if (selectedResponse && responses?.correctResponse) {
-        score += this.calculateScore(responses.correctResponse, selectedResponse);
+        let scoreQuestion = this.calculateScore(responses.correctResponse, selectedResponse);
+        if (scoreQuestion !== 1) {
+          questionControl.setErrors({...questionControl.errors, wrongAnswer: 'Wrong Answer' });
+        }
+        score += scoreQuestion;
       }
     });
 
