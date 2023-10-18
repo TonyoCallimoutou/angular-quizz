@@ -23,12 +23,12 @@
         {
           "questionId": 0,
           "id": 0,
-          "choice": "2x + 3"
+          "choice": "2x"
         },
         {
           "questionId": 0,
           "id": 1,
-          "choice": "2x"
+          "choice": "2x + 3"
         },
         {
           "questionId": 0,
@@ -635,15 +635,14 @@
       "questionnaireId": 0,
       "questionId": 0,
       "correctResponse": [
-        0
+        1
       ]
     },
     {
       "questionnaireId": 0,
       "questionId": 1,
       "correctResponse": [
-        0,
-        2
+        0
       ]
     },
     {
@@ -651,22 +650,22 @@
       "questionId": 2,
       "correctResponse": [
         0,
-        1,
-        2
+        2,
+        3
       ]
     },
     {
       "questionnaireId": 0,
       "questionId": 3,
       "correctResponse": [
-        0
+        1
       ]
     },
     {
       "questionnaireId": 0,
       "questionId": 4,
       "correctResponse": [
-        0
+        3
       ]
     },
     {
@@ -701,7 +700,6 @@
       "questionnaireId": 0,
       "questionId": 9,
       "correctResponse": [
-        0,
         1
       ]
     },
