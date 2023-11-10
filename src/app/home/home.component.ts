@@ -45,4 +45,10 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/quiz', questionnaireId]);
   }
 
+  createQuestionnaire(questionnaire: Questionnaire) {
+    this.homeService.createQuestionnaire(questionnaire).subscribe(() => {
+      this.questionnaires.push(questionnaire);
+    });
+  }
+
 }

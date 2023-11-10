@@ -12,6 +12,7 @@
 
   <div id="footer">
     <button mat-raised-button color="primary" (click)="submit()" [disabled]="!quizForm.valid">Soumettre</button>
-    <span *ngIf="score">{{score}} / {{questions.length}}</span>
+    <span *ngIf="score">{{score.toString() | abbreviate: 3: ''}} / {{questions.length}}</span>
+    <span *ngIf="score"> Répondu en {{ timeStart | time }} secondes</span>
   </div>
 </form>

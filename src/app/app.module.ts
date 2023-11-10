@@ -16,6 +16,11 @@ import {MatInputModule} from "@angular/material/input";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MatIconModule} from "@angular/material/icon";
 import { FormsModule } from '@angular/forms';
+import { AbbreviatePipe } from './shared/utils/pipe/abbreviate.pipe';
+import { TimePipe } from './shared/utils/pipe/time.pipe';
+import { HighlightDirective } from './shared/utils/directives/highlight.directive';
+import { PrefixDirective } from './shared/utils/directives/prefix.directive';
+import {DirectiveModule} from "./shared/utils/directives/directive.module";
 
 @NgModule({
   declarations: [
@@ -24,6 +29,8 @@ import { FormsModule } from '@angular/forms';
     QuizComponent,
     QuestionnaireComponent,
     LoginComponent,
+    AbbreviatePipe,
+    TimePipe,
   ],
   imports: [
     BrowserModule,
@@ -37,8 +44,11 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     BrowserAnimationsModule,
     MatIconModule,
+    DirectiveModule
   ],
   providers: [],
+  exports: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

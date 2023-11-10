@@ -2,7 +2,7 @@
   <mat-toolbar color="primary">
     <span>QuizzLearn</span>
     <span class="spacer"></span>
-    <span *ngIf="currentUser"> {{currentUser.username}}</span>
+    <span *ngIf="currentUser && currentUser.username"> {{currentUser.username | abbreviate}}</span>
 
   </mat-toolbar>
 

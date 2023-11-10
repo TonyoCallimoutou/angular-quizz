@@ -19,6 +19,7 @@ export class QuizComponent implements OnInit {
   public score: number = 0;
 
   private questionnaireId: number = 0;
+  public timeStart: Date = new Date();
 
   constructor(
     private homeService: HomeService,
@@ -33,6 +34,7 @@ export class QuizComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.timeStart = new Date();
     this.questionnaireId = this.route.snapshot.paramMap.get('id') ? parseInt(this.route.snapshot.paramMap.get('id') as string) : 0;
     this.initQuestionnaire();
   }

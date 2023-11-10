@@ -9,13 +9,17 @@
 </div>
 <div id="page">
   <div *ngFor="let questionnaire of displayedQuestions">
-    <app-questionnaire 
+    <app-questionnaire
       [questionnaire]="questionnaire"
-      [questions]="displayedQuestions"
       (goToQuestionnaire)="goToQuestionnaire(questionnaire.questionnaireId)"
     ></app-questionnaire>
   </div>
-  <app-questionnaire style="display: flex;" [questions]="displayedQuestions"
-  ></app-questionnaire>
+<!-- Dé-commenter pour creer un questionnaire -->
+
+<!--  <app-questionnaire
+    style="display: flex;"
+    (newQuestionnaire)="createQuestionnaire($event)"
+  ></app-questionnaire>-->
+
 </div>
 

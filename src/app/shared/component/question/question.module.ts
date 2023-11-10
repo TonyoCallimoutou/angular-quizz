@@ -5,6 +5,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatRadioModule} from "@angular/material/radio";
 import {MatListModule} from "@angular/material/list";
 import {MatFormFieldModule} from "@angular/material/form-field";
+import {DirectiveModule} from "../../utils/directives/directive.module";
 
 
 @NgModule({
@@ -14,13 +15,14 @@ import {MatFormFieldModule} from "@angular/material/form-field";
     exports: [
         QuestionComponent
     ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        ReactiveFormsModule,
-        MatRadioModule,
-        MatListModule,
-        MatFormFieldModule
-    ]
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatRadioModule,
+    MatListModule,
+    MatFormFieldModule,
+    DirectiveModule
+  ]
 })
 export class QuestionModule { }

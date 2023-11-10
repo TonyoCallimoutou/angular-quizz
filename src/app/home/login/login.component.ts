@@ -4,6 +4,7 @@ import {AuthService} from "../../shared/service/auth.service";
 import {take} from "rxjs";
 import {Users} from "../../shared/model/users.model";
 import {Router} from "@angular/router";
+import {ValidatorPassword} from "../../shared/utils/validators/validators";
 
 @Component({
   selector: 'app-login',
@@ -33,7 +34,8 @@ export class LoginComponent implements OnInit{
       email: ['', [Validators.required, Validators.email]],
       username: [''],
       password: ['', Validators.required],
-    });
+      verifyPassword: [''],
+    }, {validators: ValidatorPassword});
   }
 
   getFormControl(name: string): FormControl {
@@ -44,12 +46,15 @@ export class LoginComponent implements OnInit{
     this.isLogin = value;
     if (!value) {
       this.getFormControl('username').setValidators([Validators.required]);
+      this.getFormControl('verifyPassword').setValidators([Validators.required]);
     }
     else {
       this.getFormControl('username').clearValidators();
+      this.getFormControl('verifyPassword').clearValidators();
     }
 
     this.getFormControl('username').updateValueAndValidity();
+    this.getFormControl('verifyPassword').updateValueAndValidity();
   }
 
   loginUser(): void {

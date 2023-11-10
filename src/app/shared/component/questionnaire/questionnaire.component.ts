@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 export class QuestionnaireComponent {
 
   @Input() questionnaire!: Questionnaire;
-  @Input() questions!: Questionnaire[];
   @Output() goToQuestionnaire : EventEmitter<number> = new EventEmitter<number>();
+  @Output() newQuestionnaire: EventEmitter<Questionnaire> = new EventEmitter<Questionnaire>();
 
   categoryName: string = "";
 
@@ -22,11 +22,9 @@ export class QuestionnaireComponent {
     const questionnaire : Questionnaire = {
       "title": this.categoryName,
       "questionnaireId": this.homeService.lastIdQuestionnaire
-    }      
-    
-    this.homeService.createQuestionnaire(questionnaire).subscribe(() => {
-      this.questions = [...this.questions,questionnaire];
-    });
+    }
+
+    this.newQuestionnaire.emit(questionnaire);
   }
 
 }

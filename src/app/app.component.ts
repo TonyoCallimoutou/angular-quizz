@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "./shared/service/auth.service";
 import {Users} from "./shared/model/users.model";
 import {Subject, takeUntil} from "rxjs";
+import {AbbreviatePipe} from "./shared/utils/pipe/abbreviate.pipe";
 
 @Component({
   selector: 'app-root',

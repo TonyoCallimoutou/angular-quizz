@@ -30,7 +30,7 @@
         <input
           type="email" matInput
           [formControlName]="'username'"
-          placeholder="Ex. pat@example.com">
+          placeholder="Username">
         <mat-error *ngIf="getFormControl('username').hasError('required')">
           Username is <strong>required</strong>
         </mat-error>
@@ -46,6 +46,20 @@
           placeholder="Password">
         <mat-error *ngIf="getFormControl('password').hasError('required')">
           Password is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field *ngIf="!isLogin">
+        <mat-label>Password again</mat-label>
+        <input
+          type="password" matInput
+          [formControlName]="'verifyPassword'"
+          placeholder="Password again">
+        <mat-error *ngIf="getFormControl('verifyPassword').hasError('required')">
+          Password is <strong>required</strong>
+        </mat-error>
+        <mat-error *ngIf="getFormControl('verifyPassword').hasError('notSame')">
+          Password is <strong>different</strong>
         </mat-error>
       </mat-form-field>
 
